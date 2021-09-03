@@ -13,6 +13,7 @@ namespace Classe_criar_LOG
         string diretorio = pastausuario + @"\Documents\";// caminho pasta documentos
         string nomePasta = "LOG";//nome da pasta
         string nomeArquivo = "log.txt";// nome do arquivo
+        string mensagem = "";
 
 
         public Log()
@@ -34,9 +35,17 @@ namespace Classe_criar_LOG
                 DirectoryInfo raiz = new DirectoryInfo(diretorio);
                 raiz.CreateSubdirectory(nomePasta);
                 StreamWriter arquivo = new StreamWriter(diretorio + "\\" + nomePasta + "\\" + nomeArquivo, true);
-                arquivo.WriteLine(log + " " + DateTime.Now.ToString());
+                log = log + " " + DateTime.Now.ToString();
+                arquivo.WriteLine(log);
                 arquivo.Close();
             }
+            mensagem = log;
+        }
+        public string info()
+        {
+
+            return mensagem;
         }
     }
+
 }

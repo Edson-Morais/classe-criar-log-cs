@@ -16,6 +16,7 @@ namespace Classe_criar_LOG
             for (int i = 0; i < 2000; i++)
             {
                 log.criar(i.ToString());
+                Console.WriteLine(log.info());
             }
             Console.WriteLine("arquivo criado ");
             Console.ReadLine();
